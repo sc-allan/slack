@@ -146,7 +146,7 @@ func (api *Client) UpdateMessage(channelID, timestamp, text string) (string, str
 
 // UpdateMessageContext updates a message in a channel
 func (api *Client) UpdateMessageContext(ctx context.Context, channelID, timestamp, text string) (string, string, string, error) {
-	return api.SendMessageContext(ctx, channelID, MsgOptionUpdate(timestamp), MsgOptionText(text, true))
+	return api.SendMessageContext(ctx, channelID, MsgOptionUpdate(timestamp), MsgOptionText(text, false))
 }
 
 // SendMessage more flexible method for configuring messages.
